@@ -1,0 +1,11 @@
+{
+    "listener": {
+        "tcp": {      
+            "address": "0.0.0.0:8201",
+            "tls_cert_file": "/vault/KOSMoS_GLOBAL_ROOT_CA.crt",
+            "tls_key_file": "/vault/KOSMoS_GLOBAL_ROOT_CA.key"
+        }
+    },
+    "default_lease_ttl": "168h",
+    "max_lease_ttl": "0h"
+}

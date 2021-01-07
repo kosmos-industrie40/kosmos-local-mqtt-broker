@@ -1,0 +1,17 @@
+version: "2"
+
+services:
+  vault-placeholder:
+    image: harbor.kosmos.idcp.inovex.io/ondics/vault-placeholder:0.3
+    build:
+      context: vault
+  mqtt-broker:
+    image: harbor.kosmos.idcp.inovex.io/ondics/mqtt-broker:rc3
+    build:
+      context: .
+      dockerfile: Dockerfile.mqtt-broker
+  mqtt-dashboard:
+    image: harbor.kosmos.idcp.inovex.io/ondics/mqtt-dashboard:0.3
+    build:
+      context: .
+      dockerfile: Dockerfile.mqtt-dashboard

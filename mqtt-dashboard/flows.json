@@ -1,0 +1,503 @@
+[
+    {
+        "id": "70de23d1.e038a4",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "da53b866.818b4",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-dark",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#097479",
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#0eb8c0",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#555555",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#eeeeee",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "true",
+            "lockMenu": "true",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 192,
+                "sy": 96,
+                "gx": 9,
+                "gy": 9,
+                "cx": 9,
+                "cy": 9,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "5e822ce4.c7fbdc",
+        "type": "mqtt-broker",
+        "z": "",
+        "name": "",
+        "broker": "${MQTT_BROKER_FQDN}",
+        "port": "8883",
+        "tls": "270c576d.d3692",
+        "clientid": "",
+        "usetls": true,
+        "compatmode": false,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "3ca18455.f0647c",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Statistik",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "e5f204d6.08dcf8",
+        "type": "ui_group",
+        "z": "",
+        "name": "Auslastung",
+        "tab": "3ca18455.f0647c",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "b1ab5c9a.eff0b8",
+        "type": "ui_tab",
+        "z": "",
+        "name": "PLACEHOLDER",
+        "icon": "dashboard",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "5e46a468.baa314",
+        "type": "ui_group",
+        "z": "",
+        "name": "Custom",
+        "tab": "b1ab5c9a.eff0b8",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "20dcd6f2.879e02",
+        "type": "ui_group",
+        "z": "",
+        "name": "Historie",
+        "tab": "3ca18455.f0647c",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "89821767.94443",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "e5f204d6.08dcf8",
+        "order": 2,
+        "width": "3",
+        "height": 1
+    },
+    {
+        "id": "270c576d.d3692",
+        "type": "tls-config",
+        "z": "",
+        "name": "",
+        "cert": "/usr/src/node-red/cert.pem",
+        "key": "/usr/src/node-red/key.pem",
+        "ca": "/usr/src/node-red/ca.pem",
+        "certname": "",
+        "keyname": "",
+        "caname": "",
+        "servername": "",
+        "verifyservercert": true
+    },
+    {
+        "id": "38e509a7.95a89e",
+        "type": "ui_chart",
+        "z": "70de23d1.e038a4",
+        "name": "",
+        "group": "e5f204d6.08dcf8",
+        "order": 4,
+        "width": "6",
+        "height": "3",
+        "label": "Aufkommen",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "cubic",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "x": 1170,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2a2dcd80.649332",
+        "type": "ui_text_input",
+        "z": "70de23d1.e038a4",
+        "name": "",
+        "label": "MQTT-Topic-Filter",
+        "tooltip": "#",
+        "group": "20dcd6f2.879e02",
+        "order": 2,
+        "width": "2",
+        "height": "1",
+        "passthru": true,
+        "mode": "text",
+        "delay": 300,
+        "topic": "Topic",
+        "x": 650,
+        "y": 120,
+        "wires": [
+            [
+                "21c28a0e.dc2076"
+            ]
+        ]
+    },
+    {
+        "id": "a0546adc.7182c",
+        "type": "mqtt in",
+        "z": "70de23d1.e038a4",
+        "name": "",
+        "topic": "#",
+        "qos": "2",
+        "datatype": "utf8",
+        "broker": "5e822ce4.c7fbdc",
+        "x": 650,
+        "y": 160,
+        "wires": [
+            [
+                "21c28a0e.dc2076",
+                "274fa37a.28fd54"
+            ]
+        ]
+    },
+    {
+        "id": "52b2a7a6.5b5418",
+        "type": "ui_template",
+        "z": "70de23d1.e038a4",
+        "group": "20dcd6f2.879e02",
+        "name": "Tabelle",
+        "order": 2,
+        "width": "6",
+        "height": "3",
+        "format": "<style>\ntable, th , td {\n  border: 1px solid grey;\n  border-collapse: collapse;\n  padding: 5px;\n}\n</style> \n<table class=\"table\" id=\"table\">\n    <tr>\n        <th scope=\"col\">Timestamp</th>\n        <th scope=\"col\">Topic</th>\n        <th scope=\"col\">Payload</th>\n    </tr>\n    <tbody>\n        <tr ng-repeat=\"row in msg.payload\">\n            <td ng-repeat=\"item in row\" >{{item}}</td>\n        </tr>\n    </tbody>\n</table>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "x": 1080,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "21c28a0e.dc2076",
+        "type": "function",
+        "z": "70de23d1.e038a4",
+        "name": "Table",
+        "func": "//Used for setup Topic\nif (msg.topic == \"Topic\"){\n    let topic = msg.payload.replace('#', '*').replace('+', '*')\n    flow.set(\"topic\", topic)\n    flow.set('messageBuffer')\n    msg.payload = [[ new Date().toLocaleTimeString('de-DE', {hour12: false}), msg.payload, \"Keine Daten bisher\" ]]\n    return msg;\n}\n\n//Used for setup table rows\nif (msg.topic == \"Rows\"){\n    flow.set(\"rows\", msg.payload)\n    return;\n}\n\n//Get topic and table rows, or get default values\ntopic = flow.get(\"topic\") || \"hall_01/grinder_05\"\nrows = flow.get(\"rows\") || 10\n\n//Process MQTT data\nif (matchRule(msg.topic,topic)){\n    var buffer  = flow.get(\"messageBuffer\")|| []\n    \n    buffer.push([ new Date().toLocaleTimeString('de-DE', {hour12: false}), msg.topic, msg.payload ])\n    \n    while (buffer.length > rows){\n        buffer.splice(0, 1);\n    }\n    \n    flow.set(\"messageBuffer\", buffer)\n    \n    msg.payload = buffer\n    \n    return msg\n}\n\nfunction matchRule(str, rule) {\n  var escapeRegex = (str) => str.replace(/([.*+?^=!:${}()|\\[\\]\\/\\\\])/g, \"\\\\$1\");\n  return new RegExp(\"^\" + rule.split(\"*\").map(escapeRegex).join(\".*\") + \"$\").test(str);\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "// Code added here will be run when the\n// node is being stopped or re-deployed.\nflow.set('messageBuffer')",
+        "x": 890,
+        "y": 100,
+        "wires": [
+            [
+                "52b2a7a6.5b5418"
+            ]
+        ]
+    },
+    {
+        "id": "74bfa73f.2a9bc",
+        "type": "ui_text_input",
+        "z": "70de23d1.e038a4",
+        "name": "",
+        "label": "Tabellen-Zeilen",
+        "tooltip": "Tabellen Zeilen",
+        "group": "20dcd6f2.879e02",
+        "order": 2,
+        "width": "2",
+        "height": "1",
+        "passthru": true,
+        "mode": "number",
+        "delay": 300,
+        "topic": "Rows",
+        "x": 620,
+        "y": 80,
+        "wires": [
+            [
+                "21c28a0e.dc2076"
+            ]
+        ]
+    },
+    {
+        "id": "274fa37a.28fd54",
+        "type": "function",
+        "z": "70de23d1.e038a4",
+        "name": "MessageCounter",
+        "func": "// Setup sample time in sec (e.g. 60 - count messages from last 60sec)\nif (msg.topic == \"messageCounterSampleTime\"){\n    flow.set(\"messageCounterSampleTime\", msg.payload)\n    return\n} \n\nvar buffer = flow.get(\"messageCounterBuffer\") || []\nvar sampleTime = flow.get(\"messageCounterSampleTime\") || 60\nvar currentTime = Math.round((new Date()).getTime() / 1000)\n\nfunction saveBuffer(){\n    buffer = buffer.filter(function(value, index, arr){ \n        return value > currentTime-sampleTime\n    })\n    \n    flow.set(\"messageCounterBuffer\", buffer)\n}\n\nif (msg.topic == \"updateGraph\") {\n    saveBuffer()\n    msg.topic = \"Nachrichten letzte \"+sampleTime+\"sec\"\n    msg.payload = buffer.length\n    return msg\n}else {\n    buffer.push(currentTime)\n    saveBuffer()\n}\n\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 870,
+        "y": 280,
+        "wires": [
+            [
+                "38e509a7.95a89e"
+            ]
+        ]
+    },
+    {
+        "id": "ceaf9da7.99cd08",
+        "type": "inject",
+        "z": "70de23d1.e038a4",
+        "name": "",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "updateGraph",
+        "payloadType": "str",
+        "x": 630,
+        "y": 300,
+        "wires": [
+            [
+                "274fa37a.28fd54"
+            ]
+        ]
+    },
+    {
+        "id": "24cc149.a86f9ec",
+        "type": "ui_text_input",
+        "z": "70de23d1.e038a4",
+        "name": "",
+        "label": "Zeitspanne",
+        "tooltip": "Nachrichten der letzten Xsec zählen",
+        "group": "e5f204d6.08dcf8",
+        "order": 1,
+        "width": "2",
+        "height": "1",
+        "passthru": true,
+        "mode": "number",
+        "delay": 300,
+        "topic": "messageCounterSampleTime",
+        "x": 660,
+        "y": 240,
+        "wires": [
+            [
+                "274fa37a.28fd54"
+            ]
+        ]
+    },
+    {
+        "id": "a990944c.77afc8",
+        "type": "ui_button",
+        "z": "70de23d1.e038a4",
+        "name": "",
+        "group": "e5f204d6.08dcf8",
+        "order": 3,
+        "width": "1",
+        "height": "1",
+        "passthru": false,
+        "label": "Chart säubern",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "[]",
+        "payloadType": "json",
+        "topic": "",
+        "x": 830,
+        "y": 200,
+        "wires": [
+            [
+                "38e509a7.95a89e"
+            ]
+        ]
+    },
+    {
+        "id": "ef0bddd2.1c9da",
+        "type": "http in",
+        "z": "70de23d1.e038a4",
+        "name": "",
+        "url": "/health",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 560,
+        "y": 420,
+        "wires": [
+            [
+                "8b1ec8e4.d5d078"
+            ]
+        ]
+    },
+    {
+        "id": "7a6d6a9c.3707f4",
+        "type": "http response",
+        "z": "70de23d1.e038a4",
+        "name": "Response",
+        "statusCode": "",
+        "headers": {},
+        "x": 1090,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "8b1ec8e4.d5d078",
+        "type": "function",
+        "z": "70de23d1.e038a4",
+        "name": "healthcheck",
+        "func": "if (msg.hasOwnProperty(\"status\")){\n    context.set(\"mqttstatus\",msg.status.text);\n}else {\n    mqttstatus = context.get(\"mqttstatus\");\n    \n    switch (mqttstatus){\n        case \"node-red:common.status.connected\": \n            msg.statusCode = 200; break;\n        default:\n            msg.statusCode = 500; break;\n    }\n    \n    msg.payload = { mqttstatus: context.get(\"mqttstatus\") };\n    return msg\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 850,
+        "y": 420,
+        "wires": [
+            [
+                "7a6d6a9c.3707f4"
+            ]
+        ]
+    },
+    {
+        "id": "68abd4cd.73c47c",
+        "type": "status",
+        "z": "70de23d1.e038a4",
+        "name": "",
+        "scope": [
+            "a0546adc.7182c"
+        ],
+        "x": 610,
+        "y": 360,
+        "wires": [
+            [
+                "8b1ec8e4.d5d078"
+            ]
+        ]
+    }
+]

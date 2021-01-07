@@ -1,0 +1,20 @@
+FROM nodered/node-red:1.1.0
+RUN npm install node-red-dashboard
+
+COPY ./mqtt-dashboard/flows.json /app/flows.json
+COPY ./mqtt-dashboard/settings.js /app/settings.js
+COPY ./common /app/common
+
+USER root
+
+COPY ./mqtt-dashboard/entrypoint.sh /usr/src/node-red/entrypoint.sh
+
+RUN apk add jq curl &&\
+    npm install --unsafe-perm --no-update-notifier --no-fund --only=production &&\
+    chmod +x /usr/src/node-red/entrypoint.sh &&\
+    chown -R node-red:node-red /app
+
+USER node-red
+
+HEALTHCHECK CMD curl -f -s http://127.0.0.1:1880/health || exit 1
+ENTRYPOINT [ "/usr/src/node-red/entrypoint.sh" ]

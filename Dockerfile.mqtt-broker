@@ -1,0 +1,19 @@
+FROM alpine:3.12
+
+RUN addgroup mqtt &&\
+    adduser -D -G mqtt mqtt &&\
+    apk add --no-cache mosquitto jq curl
+
+WORKDIR /app
+
+COPY ./mqtt-broker /app
+COPY ./common /app/common
+
+RUN chmod +x /app/entrypoint.sh /app/healthcheck.sh &&\
+    chown -R mqtt:mqtt /app
+
+USER mqtt
+    
+ENTRYPOINT [ "/app/entrypoint.sh" ]
+
+HEALTHCHECK CMD /app/healthcheck.sh || exit 1
