@@ -85,7 +85,7 @@
             }
         },
         "site": {
-            "name": "Node-RED Dashboard",
+            "name": "KOSMoS MQTT-Broker Dashboard",
             "hideToolbar": "false",
             "allowSwipe": "true",
             "lockMenu": "true",
@@ -106,7 +106,6 @@
     {
         "id": "5e822ce4.c7fbdc",
         "type": "mqtt-broker",
-        "z": "",
         "name": "",
         "broker": "${MQTT_BROKER_FQDN}",
         "port": "8883",
@@ -129,7 +128,6 @@
     {
         "id": "3ca18455.f0647c",
         "type": "ui_tab",
-        "z": "",
         "name": "Statistik",
         "icon": "dashboard",
         "order": 1,
@@ -139,7 +137,6 @@
     {
         "id": "e5f204d6.08dcf8",
         "type": "ui_group",
-        "z": "",
         "name": "Auslastung",
         "tab": "3ca18455.f0647c",
         "order": 1,
@@ -150,7 +147,6 @@
     {
         "id": "b1ab5c9a.eff0b8",
         "type": "ui_tab",
-        "z": "",
         "name": "PLACEHOLDER",
         "icon": "dashboard",
         "order": 2,
@@ -160,7 +156,6 @@
     {
         "id": "5e46a468.baa314",
         "type": "ui_group",
-        "z": "",
         "name": "Custom",
         "tab": "b1ab5c9a.eff0b8",
         "order": 1,
@@ -171,7 +166,6 @@
     {
         "id": "20dcd6f2.879e02",
         "type": "ui_group",
-        "z": "",
         "name": "Historie",
         "tab": "3ca18455.f0647c",
         "order": 2,
@@ -191,7 +185,6 @@
     {
         "id": "270c576d.d3692",
         "type": "tls-config",
-        "z": "",
         "name": "",
         "cert": "/usr/src/node-red/cert.pem",
         "key": "/usr/src/node-red/key.pem",

@@ -1,52 +1,64 @@
-# Lokale KOSMoS MQTT Komponente
+# Lokale KOSMoS Komponente "MQTT Broker"
 
-Die lokale KOSMoS Komponente verbindet alle Komponenten auf dem Hallenboden 
-(der Edge) über das Protokoll MQTT miteinander.
-
-## Kurzbeschreibung
-
-Das verwendete Protokoll ist MQTT V3.1  
+Mit diesem Repository wird die lokale KOSMoS Komponente MQTT Broker (LKK-BROKER) realisiert.  
   
-Jede Maschine oder Komponente die mit dem MQTT Broker sprechen will, muss sich wie folgt authentifizieren:  
-* gar nicht (zum Test echt super, in Echt leider nicht verfügbar)
-* mit Benutzername/Kennwort (besser als gar nichts, Datenaustausch jedoch nicht vertraulich)
-* mit einem Zertifikat, welches von der KOSMoS Vault-PKI vergeben wurde (SSL/TLS) 
+Der LKK-BROKER verbindet andere Komponenten auf dem Hallenboden (der Edge) über das Protokoll MQTT miteinander.  
 
-## Inhalt dieses Repos
-
-Kern dieses Repos ist:  
-* ein Docker Container mit dem MQTT Broker Mosquitto.
-
-Zum Demonstation der Funktionsweise sind im Repo ebenfalls folgende Container:  
-* mqtt-dashboard: Überblick über MQTT-Nachrichten-Aufkommen im Broker (per Web-Browser)  
-* vault-placeholder: Simuliert die KOSMoS-Vault und erzeugt Zertifikate für Tests  
+[Changelog](./doc/CHANGELOG.MD)  
+[Todo Liste](./doc/TODO.MD)  
   
-> Die Vault Komponente dient nur zur demonstration der Funktionsweise und ist so keinesfalls für den Produktiveinsatz geeignet!
+  
+## Voraussetzungen zur Installation/Nutzung  
+  
+* Linux (getestet unter Ubuntu 18.04.4 LTS und Arch rolling)
+* Docker (`apt install docker-ce` bzw. `pacman -S docker`)
+  
+  
+## Konfiguration
+  
+Der Container ist stateless und wird über Umgebungsvariablen beim Start konfiguriert.
 
-## Voraussetzungen zur Installation/Nutzung
+### Allgemeine Konfigurations Variablen
 
-* Linux (getestet unter Ubuntu 18.04.4 LTS, vielleicht gehten auch andere OS's)
-* Docker (`apt install docker-ce`)
-* TCP Ports 10002 (mqtt-dashboard), 10003 (vault-placeholder HTTP), 10004 (vault-placeholder HTTPS) dürfen nicht belegt sein
-
-## TODO
-
-* Node-RED Editor Passwort schützen
-* Reverse Proxy (Candy: Einheitlicher Passwortschutz für alles / OIDC)
-* Bereitstellung einer produktionstauglichen Vault
-
+TODO: Link zur allgemeinen Readme
+  
+  
 ## Installation und Start aller Services
-
+  
 Der Start der Komponenten erfolgt über ein Start-Script,
-welches als Referenz für die Komponenten verwendet werden kann.
+welches als Referenz für die Komponenten verwendet werden kann.  
 
 ```bash
 git clone https://github.com/kosmos-industrie40/kosmos-local-startup.git
 cd kosmos-local-startup
 ./start_all.sh
 ```
+
+## Funktionsweise
+
+### Vault als PKI
+
+Zum Demonstation der Funktionsweise sind im Repo ebenfalls folgende Container:  
+* vault-placeholder: Simuliert die KOSMoS-Vault und erzeugt Zertifikate für Tests  
+  
+> Die Vault Komponente dient nur zur demonstration der Funktionsweise und ist so keinesfalls für den Produktiveinsatz geeignet!
+
+### MQTT-Broker
+
+Das verwendete Protokoll ist MQTT V3.1  
+  
+Jede Maschine oder Komponente die mit dem MQTT Broker kommunizieren will, muss sich wie folgt authentifizieren:  
+* gar nicht (zum Test echt super, in Echt leider nicht verfügbar)
+* mit Benutzername/Kennwort (besser als gar nichts, Datenaustausch jedoch nicht vertraulich)
+* mit einem Zertifikat, welches von der KOSMoS Vault-PKI vergeben wurde (SSL/TLS) 
+
+### Dashboard
+
+Überblick über MQTT-Nachrichten-Aufkommen im Broker (per Web-Browser)  
+  
   
 ## Das Netzwerk in der EDGE
+TODO: In die Allgemeine beschreibung
 
 Der MQTT-Broker ist ein zentrales Element in der EDGE.
 Um das Netzwerk der EDGE zu simulieren initialisiert das `start_all.sh` Script einen virtuellen Docker Switch (`docker network create kosmos-local`).
@@ -81,19 +93,9 @@ Dem `start_all.sh` Script können Beispiel-Services entnommen werden.
 
 ## Sichtbar machen was läuft
 
-Versendete Topics in Kommandozeile anzeigen: 
-
-```bash
-docker log -f machine-simulator
-```
-
-Visualisierung im Browser (MQTT Message aufkommen und Topics):
-
-* http://localhost:10002
-
-Zugang zur Vault im Browser:
-
-* http://localhost:10003 / https://localhost:10004
+TODO: 
+* [] Manueller Start?
+* [] Verweis auf start_all doku
 
 ## Implementierungsdetails
 
@@ -146,6 +148,7 @@ Zertifikat und Private Key von KOSMoS global sind in `vault/KOSMoS_GLOBAL_ROOT_C
 Sinn und Zweck ist, dass eine HTTPS Verbindung immer gegen das selbe `KOSMoS_GLOBAL_ROOT_CA.crt` geprüft werden kann.
 
 > In der Produktivumgebung darf ein Private Key natürlich niemals nie so zugänglich sein.
+  
 
 ## Credits
 
