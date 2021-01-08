@@ -1,16 +1,13 @@
-FROM nodered/node-red:1.1.0
+FROM nodered/node-red:1.2.7
 RUN npm install node-red-dashboard
 
 COPY ./mqtt-dashboard/flows.json /app/flows.json
-COPY ./mqtt-dashboard/settings.js /app/settings.js
 COPY ./common /app/common
+COPY ./mqtt-dashboard/entrypoint.sh /usr/src/node-red/entrypoint.sh
 
 USER root
 
-COPY ./mqtt-dashboard/entrypoint.sh /usr/src/node-red/entrypoint.sh
-
 RUN apk add jq curl &&\
-    npm install --unsafe-perm --no-update-notifier --no-fund --only=production &&\
     chmod +x /usr/src/node-red/entrypoint.sh &&\
     chown -R node-red:node-red /app
 
