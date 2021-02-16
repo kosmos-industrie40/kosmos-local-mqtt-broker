@@ -155,7 +155,7 @@ Sinn und Zweck ist, dass eine HTTPS Verbindung immer gegen das selbe `KOSMoS_GLO
 
 Auf dem KOSMoS-Testrechner ausführen und in die KOSMoS-Harbor-Registry pushen
 
-    $ docker --config ~.docker/ondics login harbor.kosmos.idcp.inovex.io && cp ~.docker/ondics/config.json  ~.docker/config.json && cat ~.docker/config.json
+    $ docker --config ~/.docker/ondics login harbor.kosmos.idcp.inovex.io && cp ~/.docker/ondics/config.json  ~/.docker/config.json && cat ~/.docker/config.json
     $ docker login
     $ docker-compose build
     $ docker-compose push
