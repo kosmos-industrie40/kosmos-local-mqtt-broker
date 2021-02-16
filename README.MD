@@ -34,6 +34,8 @@ cd kosmos-local-startup
 ./start_all.sh
 ```
 
+Danach steht der MQTT-Broker auf Port 8883 zur Verfügung.
+
 ## Funktionsweise
 
 ### Vault als PKI
